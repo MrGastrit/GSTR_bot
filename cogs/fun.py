@@ -56,7 +56,7 @@ class Fun(commands.Cog):
     #weather
     @commands.command()
     async def weather(self, ctx, city: str = None):
-        api = "976515b0d85b4198b59120257252606"
+        api = os.getenv("weather_api")
         url = f"http://api.weatherapi.com/v1/current.json?key={api}&q={city}&lang=ru"
 
         if city is None:
